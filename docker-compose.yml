@@ -5,7 +5,9 @@ services:
     build: .
     image: &app app
     restart: "no"
-    command: ["python", "manage.py", "runserver", "localhost:8000"]
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - ./appdata:/appdata
     env_file: &envfile
       - env.env
     ports:
@@ -18,12 +20,16 @@ services:
     image: *app
     restart: "no"
     command: ["celery", "-A","DNA_form","worker", "-l", "info"]
+    volumes:
+      - ".:/app:rw"
     depends_on:
       - broker
 
   broker:
     image: rabbitmq:3
     command: ["rabbitmq-server"]
+    volumes:
+      - ".:/app:rw"
     env_file: *envfile
     ports:
       - 5672:5672

@@ -22,7 +22,8 @@ def home_view(request):
         return HttpResponseRedirect('/')
         
     
-    searches = SequenceModel.objects.all()[::-1][:NUM_SEARCH_HISTORY]   
+    searches = SequenceModel.objects.all()[::-1][:NUM_SEARCH_HISTORY]
+    
     args = {'form':form, 'searches':searches}    
     return render(request, 'home.html',  args)
 
