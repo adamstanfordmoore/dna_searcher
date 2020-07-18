@@ -20,7 +20,5 @@ Now the Web app should be available at localhost:8000
 
 jamieleecho Notes:
 To run:
-docker-compose build
-docker-compose up
+docker-compose build && docker-compose up
 
-Currently the app, worker and broker all start up. The app seems to be getting blocked somewhere
