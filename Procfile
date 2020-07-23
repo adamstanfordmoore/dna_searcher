@@ -1,0 +1,1 @@
+web: gunicorn DNA_form.wsgi
