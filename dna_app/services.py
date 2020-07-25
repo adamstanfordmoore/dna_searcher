@@ -13,5 +13,5 @@ def find_seq(seq):
             handle.close()
             loc = record.seq.find(seq) 
             if loc >= 0:
-                return 'Sequence found in %s at location %d' % (protein,loc)
+                return 'Sequence found in protein %s at location %d' % (protein,loc)
         return 'No sequence found'  
