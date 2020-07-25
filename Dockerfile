@@ -9,7 +9,3 @@ RUN rm requirements.txt
 
 COPY . ./
 
-CMD python manage.py makemigrations
-CMD python manage.py migrate
-CMD gunicorn DNA_form.wsgi:application --bind 0.0.0.0::$PORT
-
