@@ -19,7 +19,8 @@ services:
     build: .
     image: *app
     restart: "no"
-    command: ["celery", "-A","DNA_form","worker", "-l", "info"]
+    command: ["celery", "-A", "DNA_form.celery", "worker", "-l", "info"]
+    env_file: *envfile
     depends_on:
       - broker
     volumes:

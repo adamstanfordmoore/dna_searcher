@@ -7,7 +7,8 @@ from celery import Celery
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DNA_form.settings')
 
-app = Celery('DNA_form',broker='amqp://broker//',broker_pool_limit = 1)    #Docker Running
+app = Celery('DNA_form',broker=os.getenv('CLOUDAMQP_URL'),broker_pool_limit = 1)    #Docker Running
+
 #app = Celery('DNA_form',broker='amqp://localhost//')  #local running Non-docker
 
 # Using a string here means the worker doesn't have to serialize
