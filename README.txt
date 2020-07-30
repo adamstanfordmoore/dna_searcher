@@ -12,3 +12,10 @@ heroku open
 or build on heroku:
 
 git push heroku main
+
+
+
+
+
+Now deployed to heroku at https://enigmatic-temple-51399.herokuapp.com
+First turn on dyno at https://dashboard.heroku.com/apps/enigmatic-temple-51399/resources
